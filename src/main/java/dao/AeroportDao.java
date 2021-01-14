@@ -5,7 +5,7 @@
  */
 package dao;
 
-import com.airbabouche.principal.Aeroport;
+import com.compagnieaerienneswing.principal.Aeroport;
 /**
  *
  * @author flo

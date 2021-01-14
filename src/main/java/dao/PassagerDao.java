@@ -5,7 +5,7 @@
  */
 package dao;
 
-import com.airbabouche.principal.Passager;
+import com.compagnieaerienneswing.principal.Passager;
 /**
  *
  * @author flo
