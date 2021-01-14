@@ -37,13 +37,13 @@ public class PagePrincipale extends javax.swing.JFrame {
         btnInscription = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        btnReservations = new javax.swing.JButton();
+        btnCompagnies = new javax.swing.JButton();
+        btnVols = new javax.swing.JButton();
+        btnEscales = new javax.swing.JButton();
+        btnAeroports = new javax.swing.JButton();
+        btnPersonnes = new javax.swing.JButton();
+        btnPays = new javax.swing.JButton();
 
         popupMenu1.setLabel("popupMenu1");
         popupMenu1.addActionListener(new java.awt.event.ActionListener() {
@@ -139,52 +139,99 @@ public class PagePrincipale extends javax.swing.JFrame {
 
         jPanel2.setBackground(java.awt.Color.gray);
 
-        jButton1.setBackground(java.awt.Color.gray);
-        jButton1.setText("Reservations");
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.setMaximumSize(new java.awt.Dimension(57, 30));
-
-        jButton2.setBackground(java.awt.Color.gray);
-        jButton2.setText("Compagnies");
-        jButton2.setContentAreaFilled(false);
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton2.setMaximumSize(new java.awt.Dimension(57, 30));
-
-        jButton3.setBackground(java.awt.Color.gray);
-        jButton3.setText("Vols");
-        jButton3.setContentAreaFilled(false);
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton3.setMaximumSize(new java.awt.Dimension(57, 30));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+        btnReservations.setBackground(java.awt.Color.white);
+        btnReservations.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        btnReservations.setForeground(java.awt.Color.lightGray);
+        btnReservations.setText("Reservations");
+        btnReservations.setBorder(new javax.swing.border.LineBorder(java.awt.Color.darkGray, 5, true));
+        btnReservations.setContentAreaFilled(false);
+        btnReservations.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnReservations.setMaximumSize(new java.awt.Dimension(57, 30));
+        btnReservations.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnReservationsMouseClicked(evt);
             }
         });
 
-        jButton4.setBackground(java.awt.Color.gray);
-        jButton4.setText("Escales");
-        jButton4.setContentAreaFilled(false);
-        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton4.setMaximumSize(new java.awt.Dimension(57, 30));
+        btnCompagnies.setBackground(java.awt.Color.gray);
+        btnCompagnies.setText("Compagnies");
+        btnCompagnies.setBorder(new javax.swing.border.LineBorder(java.awt.Color.darkGray, 5, true));
+        btnCompagnies.setContentAreaFilled(false);
+        btnCompagnies.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCompagnies.setMaximumSize(new java.awt.Dimension(57, 30));
+        btnCompagnies.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCompagniesMouseClicked(evt);
+            }
+        });
 
-        jButton5.setBackground(java.awt.Color.gray);
-        jButton5.setText("Aeroports");
-        jButton5.setContentAreaFilled(false);
-        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton5.setMaximumSize(new java.awt.Dimension(57, 30));
+        btnVols.setBackground(java.awt.Color.gray);
+        btnVols.setText("Vols");
+        btnVols.setBorder(new javax.swing.border.LineBorder(java.awt.Color.darkGray, 5, true));
+        btnVols.setContentAreaFilled(false);
+        btnVols.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVols.setMaximumSize(new java.awt.Dimension(57, 30));
+        btnVols.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnVolsMouseClicked(evt);
+            }
+        });
+        btnVols.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolsActionPerformed(evt);
+            }
+        });
 
-        jButton6.setBackground(java.awt.Color.pink);
-        jButton6.setText("Personnes");
-        jButton6.setContentAreaFilled(false);
-        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton6.setMaximumSize(new java.awt.Dimension(57, 30));
+        btnEscales.setBackground(java.awt.Color.gray);
+        btnEscales.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        btnEscales.setForeground(java.awt.Color.lightGray);
+        btnEscales.setText("Escales");
+        btnEscales.setBorder(new javax.swing.border.LineBorder(java.awt.Color.darkGray, 5, true));
+        btnEscales.setContentAreaFilled(false);
+        btnEscales.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEscales.setMaximumSize(new java.awt.Dimension(57, 30));
+        btnEscales.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnEscalesMouseClicked(evt);
+            }
+        });
 
-        jButton7.setBackground(java.awt.Color.gray);
-        jButton7.setText("Pays");
-        jButton7.setContentAreaFilled(false);
-        jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton7.setMaximumSize(new java.awt.Dimension(57, 30));
+        btnAeroports.setBackground(java.awt.Color.gray);
+        btnAeroports.setForeground(java.awt.Color.lightGray);
+        btnAeroports.setText("Aeroports");
+        btnAeroports.setBorder(new javax.swing.border.LineBorder(java.awt.Color.darkGray, 5, true));
+        btnAeroports.setContentAreaFilled(false);
+        btnAeroports.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAeroports.setMaximumSize(new java.awt.Dimension(57, 30));
+        btnAeroports.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAeroportsMouseClicked(evt);
+            }
+        });
+
+        btnPersonnes.setBackground(java.awt.Color.pink);
+        btnPersonnes.setText("Personnes");
+        btnPersonnes.setBorder(new javax.swing.border.LineBorder(java.awt.Color.darkGray, 5, true));
+        btnPersonnes.setContentAreaFilled(false);
+        btnPersonnes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPersonnes.setMaximumSize(new java.awt.Dimension(57, 30));
+        btnPersonnes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnPersonnesMouseClicked(evt);
+            }
+        });
+
+        btnPays.setBackground(java.awt.Color.gray);
+        btnPays.setText("Pays");
+        btnPays.setBorder(new javax.swing.border.LineBorder(java.awt.Color.darkGray, 5, true));
+        btnPays.setContentAreaFilled(false);
+        btnPays.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPays.setMaximumSize(new java.awt.Dimension(57, 30));
+        btnPays.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnPaysMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -194,19 +241,19 @@ public class PagePrincipale extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnEscales, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnVols, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(80, 80, 80))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnAeroports, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnReservations, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnPersonnes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCompagnies, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnPays, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(49, 49, 49))
         );
         jPanel2Layout.setVerticalGroup(
@@ -214,17 +261,17 @@ public class PagePrincipale extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnReservations, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPersonnes, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(52, 52, 52)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnEscales, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVols, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCompagnies, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnAeroports, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
+                    .addComponent(btnPays, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(21, 21, 21))
         );
 
@@ -233,20 +280,20 @@ public class PagePrincipale extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(58, Short.MAX_VALUE)
+                .addGap(107, 107, 107)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(163, 163, 163))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(64, 64, 64)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(32, 32, 32)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         pack();
@@ -274,9 +321,58 @@ public class PagePrincipale extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnInscriptionActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnVolsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnVolsActionPerformed
+
+    private void btnReservationsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReservationsMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        JfReservations r = new JfReservations();
+        r.setVisible(true);
+    }//GEN-LAST:event_btnReservationsMouseClicked
+
+    private void btnEscalesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEscalesMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        JfEscales r = new JfEscales();
+        r.setVisible(true);
+    }//GEN-LAST:event_btnEscalesMouseClicked
+
+    private void btnAeroportsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAeroportsMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        JfAeroports r = new JfAeroports();
+        r.setVisible(true);
+    }//GEN-LAST:event_btnAeroportsMouseClicked
+
+    private void btnVolsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVolsMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        JfVols r = new JfVols();
+        r.setVisible(true);
+    }//GEN-LAST:event_btnVolsMouseClicked
+
+    private void btnPersonnesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPersonnesMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        JfPersonnes r = new JfPersonnes();
+        r.setVisible(true);
+    }//GEN-LAST:event_btnPersonnesMouseClicked
+
+    private void btnCompagniesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCompagniesMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        JfCompagnies r = new JfCompagnies();
+        r.setVisible(true);
+    }//GEN-LAST:event_btnCompagniesMouseClicked
+
+    private void btnPaysMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPaysMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        JfPays r = new JfPays();
+        r.setVisible(true);
+    }//GEN-LAST:event_btnPaysMouseClicked
 
     /**
      * @param args the command line arguments
@@ -314,17 +410,17 @@ public class PagePrincipale extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAeroports;
+    private javax.swing.JButton btnCompagnies;
     private javax.swing.JButton btnConnexion;
+    private javax.swing.JButton btnEscales;
     private javax.swing.JButton btnInscription;
+    private javax.swing.JButton btnPays;
+    private javax.swing.JButton btnPersonnes;
+    private javax.swing.JButton btnReservations;
+    private javax.swing.JButton btnVols;
     private javax.swing.JTextField inputEmail;
     private javax.swing.JTextField inputPassword;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
