@@ -4,9 +4,8 @@
  * and open the template in the editor.
  */
 package com.compagnieaerienneswing.principal;
-import dao.AeroportDao;
 
-import java.awt.event.InputMethodListener;
+import dao.AeroportDao;
 import javax.swing.*;
 
 /**
@@ -205,6 +204,7 @@ public class JfAeroports extends javax.swing.JFrame {
 
     private void btnSupprimerAeroportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSupprimerAeroportMouseClicked
         // TODO add your handling code here:
+        dao.supprimerAeroport();
     }//GEN-LAST:event_btnSupprimerAeroportMouseClicked
 
     private void btnAjouterAeroportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAjouterAeroportMouseClicked
@@ -219,7 +219,7 @@ public class JfAeroports extends javax.swing.JFrame {
 
     private void tableAeroportsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableAeroportsMouseClicked
         // TODO add your handling code here:
-        
+        dao.tableUpdate();
     }//GEN-LAST:event_tableAeroportsMouseClicked
 
     /**
