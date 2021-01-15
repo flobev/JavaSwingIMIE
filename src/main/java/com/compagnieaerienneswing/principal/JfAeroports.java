@@ -4,20 +4,58 @@
  * and open the template in the editor.
  */
 package com.compagnieaerienneswing.principal;
+import dao.AeroportDao;
+
+import java.awt.event.InputMethodListener;
+import javax.swing.*;
 
 /**
  *
  * @author flo
  */
 public class JfAeroports extends javax.swing.JFrame {
-
+    
+    AeroportDao dao = new AeroportDao();
+    
+    
     /**
      * Creates new form JfAeroports
      */
     public JfAeroports() {
         initComponents();
+        this.setTitle("Liste des Aeroports - Gestion des Aeroports");
+        setLocationRelativeTo(null);
+        dao.tableUpdate();
+    }
+    
+    public JButton getBtnAddAeroport(){
+        return btnAjouterAeroport;
+    }
+    
+    public JButton getBtnUpdateAeroport(){
+        return btnModifierAeroport;
+    }
+    
+    public JButton getBtnDeleteAeroport(){
+        return btnSupprimerAeroport;
     }
 
+    public JTextField getInputNameAeroport() {
+        return inputNameAeroport;
+    }
+
+    public JTextField getInputPaysAeroport() {
+        return inputPaysAeroport;
+    }
+
+    public JTextField getInputVilleAeroport() {
+        return inputVilleAeroport;
+    }
+
+    public JTable getTableAeroports() {
+        return tableAeroports;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,21 +65,165 @@ public class JfAeroports extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        inputNameAeroport = new javax.swing.JTextField();
+        inputVilleAeroport = new javax.swing.JTextField();
+        inputPaysAeroport = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        btnAjouterAeroport = new javax.swing.JButton();
+        btnModifierAeroport = new javax.swing.JButton();
+        btnSupprimerAeroport = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tableAeroports = new javax.swing.JTable();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(java.awt.Color.gray);
+
+        inputNameAeroport.setText("jTextField1");
+
+        inputVilleAeroport.setText("jTextField1");
+
+        inputPaysAeroport.setText("jTextField1");
+
+        jLabel1.setText("Nom");
+
+        jLabel2.setText("Ville");
+
+        jLabel3.setText("Pays");
+
+        btnAjouterAeroport.setText("Ajouter");
+        btnAjouterAeroport.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAjouterAeroportMouseClicked(evt);
+            }
+        });
+
+        btnModifierAeroport.setText("Modifier");
+        btnModifierAeroport.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnModifierAeroportMouseClicked(evt);
+            }
+        });
+
+        btnSupprimerAeroport.setText("Supprimer");
+        btnSupprimerAeroport.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSupprimerAeroportMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(inputPaysAeroport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
+                        .addComponent(btnSupprimerAeroport, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(inputVilleAeroport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnModifierAeroport, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(inputNameAeroport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnAjouterAeroport, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(35, 35, 35))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inputNameAeroport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
+                    .addComponent(btnAjouterAeroport))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inputVilleAeroport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addComponent(btnModifierAeroport))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inputPaysAeroport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(btnSupprimerAeroport))
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+
+        btnAjouterAeroport.getAccessibleContext().setAccessibleDescription("");
+
+        tableAeroports.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Id", "Nom", "Ville", "Pays"
+            }
+        ));
+        tableAeroports.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableAeroportsMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(tableAeroports);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(305, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSupprimerAeroportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSupprimerAeroportMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSupprimerAeroportMouseClicked
+
+    private void btnAjouterAeroportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAjouterAeroportMouseClicked
+        // TODO add your handling code here:
+        dao.ajouterAeroport();
+    }//GEN-LAST:event_btnAjouterAeroportMouseClicked
+
+    private void btnModifierAeroportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnModifierAeroportMouseClicked
+        // TODO add your handling code here:
+        dao.modifierAeroport();
+    }//GEN-LAST:event_btnModifierAeroportMouseClicked
+
+    private void tableAeroportsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableAeroportsMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_tableAeroportsMouseClicked
 
     /**
      * @param args the command line arguments
@@ -79,5 +261,18 @@ public class JfAeroports extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAjouterAeroport;
+    private javax.swing.JButton btnModifierAeroport;
+    private javax.swing.JButton btnSupprimerAeroport;
+    private javax.swing.JTextField inputNameAeroport;
+    private javax.swing.JTextField inputPaysAeroport;
+    private javax.swing.JTextField inputVilleAeroport;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable tableAeroports;
     // End of variables declaration//GEN-END:variables
+    
 }
