@@ -17,14 +17,11 @@ public class JfAeroports extends javax.swing.JFrame {
     
     AeroportDao dao = new AeroportDao();
     
-    
     /**
      * Creates new form JfAeroports
      */
     public JfAeroports() {
         initComponents();
-        this.setTitle("Liste des Aeroports - Gestion des Aeroports");
-        setLocationRelativeTo(null);
         dao.tableUpdate();
     }
     
@@ -200,7 +197,7 @@ public class JfAeroports extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(305, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         pack();

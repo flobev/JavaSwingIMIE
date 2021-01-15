@@ -342,8 +342,8 @@ public class PagePrincipale extends javax.swing.JFrame {
     private void btnAeroportsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAeroportsMouseClicked
         // TODO add your handling code here:
         dispose();
-        JfAeroports r = new JfAeroports();
-        r.setVisible(true);
+        JfAeroports f = new JfAeroports();
+        f.setVisible(true);
     }//GEN-LAST:event_btnAeroportsMouseClicked
 
     private void btnVolsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVolsMouseClicked
