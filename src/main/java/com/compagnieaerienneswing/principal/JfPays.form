@@ -117,16 +117,25 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Ajouter"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAjouterPaysActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnModifierPays">
           <Properties>
             <Property name="text" type="java.lang.String" value="Modifier"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnModifierPaysActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnSupprimerPays">
           <Properties>
             <Property name="text" type="java.lang.String" value="Supprimer"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSupprimerPaysActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>

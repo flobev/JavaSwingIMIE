@@ -5,6 +5,11 @@
  */
 package com.compagnieaerienneswing.principal;
 
+import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import dao.PaysDao;
+
 /**
  *
  * @author flo
@@ -17,8 +22,26 @@ public class JfPays extends javax.swing.JFrame {
     public JfPays() {
         initComponents();
     }
-    
-    
+
+    public JButton getBtnAjouterPays() {
+        return btnAjouterPays;
+    }
+
+    public JButton getBtnModifierPays() {
+        return btnModifierPays;
+    }
+
+    public JButton getBtnSupprimerPays() {
+        return btnSupprimerPays;
+    }
+
+    public JTextField getInputNamePays() {
+        return inputNamePays;
+    }
+
+    public JTable getTablePays() {
+        return tablePays;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -48,10 +71,25 @@ public class JfPays extends javax.swing.JFrame {
         inputNamePays.setText("jTextField1");
 
         btnAjouterPays.setText("Ajouter");
+        btnAjouterPays.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAjouterPaysActionPerformed(evt);
+            }
+        });
 
         btnModifierPays.setText("Modifier");
+        btnModifierPays.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModifierPaysActionPerformed(evt);
+            }
+        });
 
         btnSupprimerPays.setText("Supprimer");
+        btnSupprimerPays.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSupprimerPaysActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Formulaire Pays");
 
@@ -132,6 +170,19 @@ public class JfPays extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAjouterPaysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjouterPaysActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnAjouterPaysActionPerformed
+
+    private void btnModifierPaysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifierPaysActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnModifierPaysActionPerformed
+
+    private void btnSupprimerPaysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSupprimerPaysActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSupprimerPaysActionPerformed
 
     /**
      * @param args the command line arguments
