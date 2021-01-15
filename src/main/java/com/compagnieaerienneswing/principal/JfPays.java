@@ -16,6 +16,8 @@ import dao.PaysDao;
  */
 public class JfPays extends javax.swing.JFrame {
 
+    PaysDao dao = new PaysDao();
+    
     /**
      * Creates new form JfPays
      */
@@ -173,15 +175,17 @@ public class JfPays extends javax.swing.JFrame {
 
     private void btnAjouterPaysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjouterPaysActionPerformed
         // TODO add your handling code here:
-        
+        dao.ajouterPays();
     }//GEN-LAST:event_btnAjouterPaysActionPerformed
 
     private void btnModifierPaysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifierPaysActionPerformed
         // TODO add your handling code here:
+        dao.modifierPays();
     }//GEN-LAST:event_btnModifierPaysActionPerformed
 
     private void btnSupprimerPaysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSupprimerPaysActionPerformed
         // TODO add your handling code here:
+        dao.supprimerAeroport();
     }//GEN-LAST:event_btnSupprimerPaysActionPerformed
 
     /**
