@@ -9,20 +9,32 @@ import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import dao.PaysDao;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author flo
  */
 public class JfPays extends javax.swing.JFrame {
-
-    PaysDao dao = new PaysDao();
+    Connection con;
+    PreparedStatement pst;
     
     /**
      * Creates new form JfPays
      */
     public JfPays() {
         initComponents();
+        tableUpdate();
     }
 
     public JButton getBtnAjouterPays() {
@@ -43,6 +55,43 @@ public class JfPays extends javax.swing.JFrame {
 
     public JTable getTablePays() {
         return tablePays;
+    }
+    
+    
+    public void tableUpdate(){
+        
+        int cpt;
+        
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con= DriverManager.getConnection("jdbc:mysql://localhost:3307/airbabouche", "root","");
+            pst=con.prepareStatement("select * from pays");
+            ResultSet rs = pst.executeQuery();
+            
+            ResultSetMetaData rsmd = rs.getMetaData(); //Recupération des données sql
+            
+            cpt = rsmd.getColumnCount();
+            
+            DefaultTableModel dtm = (DefaultTableModel)tablePays.getModel();
+            
+            dtm.setRowCount(0);
+            
+            while(rs.next()) {
+                
+                Vector vect = new Vector();
+                
+                for (int i = 0; i < cpt; i++) {
+                    vect.add(rs.getString("idPays"));
+                    vect.add(rs.getString("nom"));
+                }
+                dtm.addRow(vect);
+            }
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(JfPays.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(JfPays.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -145,6 +194,11 @@ public class JfPays extends javax.swing.JFrame {
                 "Id", "Nom"
             }
         ));
+        tablePays.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablePaysMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tablePays);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -175,18 +229,104 @@ public class JfPays extends javax.swing.JFrame {
 
     private void btnAjouterPaysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjouterPaysActionPerformed
         // TODO add your handling code here:
-        dao.ajouterPays();
+        if(inputNamePays.getText().equals("")){
+            JOptionPane.showMessageDialog(this, "Vous devez remplir les champs !", "ATTENTION", JOptionPane.INFORMATION_MESSAGE);
+            inputNamePays.requestFocus();
+        } else {
+            String nomPays = inputNamePays.getText();
+
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                con= DriverManager.getConnection("jdbc:mysql://localhost:3307/airbabouche", "root","");
+                pst=con.prepareStatement("insert into pays (nom) values (?)");
+                pst.setString(1,nomPays);
+                pst.executeUpdate();
+
+                JOptionPane.showMessageDialog(this, "Données enregistrées !");
+
+                inputNamePays.setText("");
+
+                tableUpdate();
+
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(JfPays.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(JfPays.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }//GEN-LAST:event_btnAjouterPaysActionPerformed
 
     private void btnModifierPaysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifierPaysActionPerformed
         // TODO add your handling code here:
-        dao.modifierPays();
+        DefaultTableModel dtm = (DefaultTableModel)tablePays.getModel();
+        int selectedIndex = tablePays.getSelectedRow();
+        
+        try {
+            
+            int idPays = Integer.parseInt(dtm.getValueAt(selectedIndex, 0).toString());
+            String nomPays = inputNamePays.getText();
+            
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con= DriverManager.getConnection("jdbc:mysql://localhost:3307/airbabouche", "root","");
+            pst=con.prepareStatement("update pays set nom = ? where idPays = ?");
+            
+            pst.setString(1, nomPays);
+            pst.setInt(2, idPays);
+            
+            pst.executeUpdate();
+            
+            JOptionPane.showMessageDialog(this, "Données mises à jour !");
+            
+            inputNamePays.setText("");
+            
+            tableUpdate();
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(JfPays.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(JfPays.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnModifierPaysActionPerformed
 
     private void btnSupprimerPaysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSupprimerPaysActionPerformed
         // TODO add your handling code here:
-        dao.supprimerAeroport();
+        DefaultTableModel dtm = (DefaultTableModel)tablePays.getModel();
+        int selectedIndex = tablePays.getSelectedRow();
+            
+        int idPays = Integer.parseInt(dtm.getValueAt(selectedIndex, 0).toString());
+        int dialogResult = JOptionPane.showConfirmDialog(null, "Voulez-vous supprimer cette donnée ?", "Attention !", JOptionPane.YES_NO_OPTION);
+
+        if(dialogResult==JOptionPane.YES_OPTION)
+        {
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                con= DriverManager.getConnection("jdbc:mysql://localhost:3307/airbabouche", "root","");
+                pst=con.prepareStatement("delete from pays where idPays=?");
+
+                pst.setInt(1, idPays);
+                pst.executeUpdate();
+
+                JOptionPane.showMessageDialog(this, "Donnée supprimée!");
+
+                inputNamePays.setText("");
+
+                tableUpdate();
+                
+            } catch (ClassNotFoundException ex) {
+            Logger.getLogger(JfPays.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(JfPays.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }//GEN-LAST:event_btnSupprimerPaysActionPerformed
+
+    private void tablePaysMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablePaysMouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel dtm = (DefaultTableModel)tablePays.getModel();
+        int selectedIndex = tablePays.getSelectedRow();
+        
+        inputNamePays.setText(dtm.getValueAt(selectedIndex, 1).toString());
+    }//GEN-LAST:event_tablePaysMouseClicked
 
     /**
      * @param args the command line arguments

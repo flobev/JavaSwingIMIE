@@ -5,7 +5,6 @@
  */
 package dao;
 
-import com.compagnieaerienneswing.principal.JfAeroports;
 import com.compagnieaerienneswing.principal.JfPays;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -29,12 +28,16 @@ public class PaysDao {
     
     Connection con;
     PreparedStatement pst;
+    DefaultTableModel dtm;
     
     JfPays a = new JfPays();
     
     JTextField inputNom = a.getInputNamePays();
     JTable tablePays = a.getTablePays();
-    
+   
+    /**
+     *
+     */
     public void tableUpdate(){
         
         int cpt;
@@ -65,9 +68,9 @@ public class PaysDao {
             }
             
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(JfPays.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PaysDao.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(JfPays.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PaysDao.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -118,10 +121,10 @@ public class PaysDao {
             
             Class.forName("com.mysql.cj.jdbc.Driver");
             con= DriverManager.getConnection("jdbc:mysql://localhost:3307/airbabouche", "root","");
-            pst=con.prepareStatement("update pays set nom = ? where idpays = ?");
+            pst=con.prepareStatement("update pays set nom = ? where idPays = ?");
             
             pst.setString(1, nomPays);
-            pst.setInt(4, idPays);
+            pst.setInt(2, idPays);
             
             pst.executeUpdate();
             
@@ -150,7 +153,7 @@ public class PaysDao {
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 con= DriverManager.getConnection("jdbc:mysql://localhost:3307/airbabouche", "root","");
-                pst=con.prepareStatement("delete from pays where idpays=?");
+                pst=con.prepareStatement("delete from pays where idPays=?");
 
                 pst.setInt(1, idPays);
                 pst.executeUpdate();
