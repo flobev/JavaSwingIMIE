@@ -121,6 +121,7 @@ public class JfAeroports extends javax.swing.JFrame {
         btnSupprimerAeroport = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         inputIdAeroport = new javax.swing.JTextField();
+        btnMenu = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         tableAeroports = new javax.swing.JTable();
 
@@ -196,12 +197,19 @@ public class JfAeroports extends javax.swing.JFrame {
             }
         });
 
+        btnMenu.setText("Menu");
+        btnMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenuActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
+                .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
@@ -209,7 +217,7 @@ public class JfAeroports extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(inputPaysAeroport, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
+                    .addComponent(inputPaysAeroport)
                     .addComponent(inputVilleAeroport)
                     .addComponent(inputNameAeroport)
                     .addComponent(inputIdAeroport, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -218,14 +226,19 @@ public class JfAeroports extends javax.swing.JFrame {
                     .addComponent(btnModifierAeroport, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnAjouterAeroport, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnSupprimerAeroport, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28))
+                .addGap(20, 20, 20))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnMenu)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(btnMenu)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(inputIdAeroport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))
@@ -242,13 +255,13 @@ public class JfAeroports extends javax.swing.JFrame {
                             .addComponent(inputPaysAeroport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
+                        .addGap(15, 15, 15)
                         .addComponent(btnAjouterAeroport)
                         .addGap(18, 18, 18)
                         .addComponent(btnModifierAeroport)
                         .addGap(24, 24, 24)
                         .addComponent(btnSupprimerAeroport)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addGap(55, 55, 55))
         );
 
         btnAjouterAeroport.getAccessibleContext().setAccessibleDescription("");
@@ -275,21 +288,21 @@ public class JfAeroports extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(46, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap(157, Short.MAX_VALUE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE))
+                .addGap(36, 36, 36))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addGap(73, 73, 73))
         );
 
         pack();
@@ -448,6 +461,13 @@ public class JfAeroports extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inputIdAeroportActionPerformed
 
+    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        PagePrincipale r = new PagePrincipale();
+        r.setVisible(true);
+    }//GEN-LAST:event_btnMenuActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -485,6 +505,7 @@ public class JfAeroports extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAjouterAeroport;
+    private javax.swing.JButton btnMenu;
     private javax.swing.JButton btnModifierAeroport;
     private javax.swing.JButton btnSupprimerAeroport;
     private javax.swing.JTextField inputIdAeroport;

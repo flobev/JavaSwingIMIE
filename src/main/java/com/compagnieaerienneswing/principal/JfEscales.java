@@ -93,6 +93,7 @@ public class JfEscales extends javax.swing.JFrame {
         btnUpdateEscale = new javax.swing.JButton();
         btnAddEscale = new javax.swing.JButton();
         btnDeleteEscale = new javax.swing.JButton();
+        btnMenu = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableEscales = new javax.swing.JTable();
 
@@ -129,6 +130,13 @@ public class JfEscales extends javax.swing.JFrame {
             }
         });
 
+        btnMenu.setText("Menu");
+        btnMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenuActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -160,13 +168,17 @@ public class JfEscales extends javax.swing.JFrame {
                         .addGap(30, 30, 30)
                         .addComponent(btnUpdateEscale, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31)
-                        .addComponent(btnDeleteEscale, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnDeleteEscale, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnMenu)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addComponent(btnMenu)
+                .addGap(5, 5, 5)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
@@ -351,6 +363,13 @@ public class JfEscales extends javax.swing.JFrame {
         inputDateArriveeEscale.setText(dtm.getValueAt(selectedIndex, 4).toString());
     }//GEN-LAST:event_tableEscalesMouseClicked
 
+    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        PagePrincipale r = new PagePrincipale();
+        r.setVisible(true);
+    }//GEN-LAST:event_btnMenuActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -389,6 +408,7 @@ public class JfEscales extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddEscale;
     private javax.swing.JButton btnDeleteEscale;
+    private javax.swing.JButton btnMenu;
     private javax.swing.JButton btnUpdateEscale;
     private javax.swing.JTextField inputDateArriveeEscale;
     private javax.swing.JTextField inputDateDepartEscale;

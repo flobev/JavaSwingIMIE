@@ -110,6 +110,7 @@ public class JfPays extends javax.swing.JFrame {
         btnModifierPays = new javax.swing.JButton();
         btnSupprimerPays = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        btnMenu = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablePays = new javax.swing.JTable();
 
@@ -144,6 +145,13 @@ public class JfPays extends javax.swing.JFrame {
 
         jLabel2.setText("Formulaire Pays");
 
+        btnMenu.setText("Menu");
+        btnMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenuActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -157,20 +165,26 @@ public class JfPays extends javax.swing.JFrame {
                 .addComponent(btnSupprimerPays)
                 .addGap(31, 31, 31))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(97, 97, 97)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(97, 97, 97)
                         .addComponent(jLabel1)
                         .addGap(31, 31, 31)
-                        .addComponent(inputNamePays, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(inputNamePays, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnMenu)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(7, 7, 7)
-                .addComponent(jLabel2)
+                .addGap(3, 3, 3)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(btnMenu))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -221,7 +235,7 @@ public class JfPays extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
@@ -328,6 +342,13 @@ public class JfPays extends javax.swing.JFrame {
         inputNamePays.setText(dtm.getValueAt(selectedIndex, 1).toString());
     }//GEN-LAST:event_tablePaysMouseClicked
 
+    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        PagePrincipale r = new PagePrincipale();
+        r.setVisible(true);
+    }//GEN-LAST:event_btnMenuActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -365,6 +386,7 @@ public class JfPays extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAjouterPays;
+    private javax.swing.JButton btnMenu;
     private javax.swing.JButton btnModifierPays;
     private javax.swing.JButton btnSupprimerPays;
     private javax.swing.JTextField inputNamePays;

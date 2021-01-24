@@ -88,6 +88,7 @@ public class JfCompagnies extends javax.swing.JFrame {
         btnSupprimerCompagnies = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         inputIdCompagnies = new javax.swing.JTextField();
+        btnMenu = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableCompagnie = new javax.swing.JTable();
 
@@ -126,36 +127,49 @@ public class JfCompagnies extends javax.swing.JFrame {
             }
         });
 
+        btnMenu.setText("Menu");
+        btnMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenuActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(41, 41, 41))
+                        .addGap(58, 58, 58)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(24, 24, 24)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(inputIdCompagnies, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
-                            .addComponent(inputNameCompagnies)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnAjouterCompagnies, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addGap(41, 41, 41))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addGap(24, 24, 24)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(inputIdCompagnies, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
+                                    .addComponent(inputNameCompagnies)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnAjouterCompagnies, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnModifierCompagnies, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
-                        .addComponent(btnModifierCompagnies, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(btnSupprimerCompagnies, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSupprimerCompagnies, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnMenu)))
                 .addContainerGap(42, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(51, Short.MAX_VALUE)
+                .addComponent(btnMenu)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inputIdCompagnies, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
@@ -326,6 +340,13 @@ public class JfCompagnies extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inputIdCompagniesActionPerformed
 
+    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        PagePrincipale r = new PagePrincipale();
+        r.setVisible(true);
+    }//GEN-LAST:event_btnMenuActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -363,6 +384,7 @@ public class JfCompagnies extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAjouterCompagnies;
+    private javax.swing.JButton btnMenu;
     private javax.swing.JButton btnModifierCompagnies;
     private javax.swing.JButton btnSupprimerCompagnies;
     private javax.swing.JTextField inputIdCompagnies;
