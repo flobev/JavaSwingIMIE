@@ -357,10 +357,10 @@ public class JfEscales extends javax.swing.JFrame {
         DefaultTableModel dtm = (DefaultTableModel)tableEscales.getModel();
         int selectedIndex = tableEscales.getSelectedRow();
         
-        inputidVolEscale.setText(dtm.getValueAt(selectedIndex, 1).toString());
-        inputidAeroportEscale.setText(dtm.getValueAt(selectedIndex, 2).toString());
-        inputDateDepartEscale.setText(dtm.getValueAt(selectedIndex, 3).toString());
-        inputDateArriveeEscale.setText(dtm.getValueAt(selectedIndex, 4).toString());
+        inputidVolEscale.setText(dtm.getValueAt(selectedIndex, 0).toString());
+        inputidAeroportEscale.setText(dtm.getValueAt(selectedIndex, 1).toString());
+        inputDateDepartEscale.setText(dtm.getValueAt(selectedIndex, 2).toString());
+        inputDateArriveeEscale.setText(dtm.getValueAt(selectedIndex, 3).toString());
     }//GEN-LAST:event_tableEscalesMouseClicked
 
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed

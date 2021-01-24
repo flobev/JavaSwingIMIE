@@ -327,6 +327,7 @@ public class JfAeroports extends javax.swing.JFrame {
         DefaultTableModel dtm = (DefaultTableModel)tableAeroports.getModel();
         int selectedIndex = tableAeroports.getSelectedRow();
         
+        inputIdAeroport.setText(dtm.getValueAt(selectedIndex, 0).toString());
         inputNameAeroport.setText(dtm.getValueAt(selectedIndex, 1).toString());
         inputVilleAeroport.setText(dtm.getValueAt(selectedIndex, 2).toString());
         inputPaysAeroport.setText(dtm.getValueAt(selectedIndex, 3).toString());

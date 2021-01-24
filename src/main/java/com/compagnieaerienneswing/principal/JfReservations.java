@@ -206,7 +206,7 @@ public class JfReservations extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "idVol", "idPersonne", "Confirmation", "idPersonne"
+                "idVol", "idClient", "Confirmation", "idPersonne"
             }
         ));
         tableReservation.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -358,10 +358,10 @@ public class JfReservations extends javax.swing.JFrame {
         DefaultTableModel dtm = (DefaultTableModel)tableReservation.getModel();
         int selectedIndex = tableReservation.getSelectedRow();
         
-        inputIdVol.setText(dtm.getValueAt(selectedIndex, 1).toString());
-        inputIdClient.setText(dtm.getValueAt(selectedIndex, 2).toString());
-        inputConfirmationReservations.setText(dtm.getValueAt(selectedIndex, 3).toString());
-        inputIdPersonneReservation.setText(dtm.getValueAt(selectedIndex, 4).toString());
+        inputIdVol.setText(dtm.getValueAt(selectedIndex, 0).toString());
+        inputIdClient.setText(dtm.getValueAt(selectedIndex, 1).toString());
+        inputConfirmationReservations.setText(dtm.getValueAt(selectedIndex, 2).toString());
+        inputIdPersonneReservation.setText(dtm.getValueAt(selectedIndex, 3).toString());
     }//GEN-LAST:event_tableReservationMouseClicked
 
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed

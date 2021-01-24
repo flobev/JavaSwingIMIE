@@ -40,7 +40,7 @@ public class JfVols extends javax.swing.JFrame {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con= DriverManager.getConnection("jdbc:mysql://localhost:3307/airbabouche", "root","");
-            pst=con.prepareStatement("select * from vols");
+            pst=con.prepareStatement("select * from vol");
             ResultSet rs = pst.executeQuery();
             
             ResultSetMetaData rsmd = rs.getMetaData(); //Recupération des données sql
@@ -189,7 +189,7 @@ public class JfVols extends javax.swing.JFrame {
                         .addComponent(jButton1)
                         .addGap(99, 99, 99)
                         .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                         .addComponent(jButton3)))
                 .addGap(90, 90, 90))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -236,13 +236,13 @@ public class JfVols extends javax.swing.JFrame {
 
         tableVols.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "IdVol", "Place", "Intitule", "aeroport_depart", "aeroport_arrive", "date_depart", "date_arrive", "IdCompagnie"
             }
         ));
         tableVols.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -256,12 +256,13 @@ public class JfVols extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1))
             .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addGap(126, 126, 126)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 129, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -292,14 +293,14 @@ public class JfVols extends javax.swing.JFrame {
         DefaultTableModel dtm = (DefaultTableModel)tableVols.getModel();
         int selectedIndex = tableVols.getSelectedRow();
         
-        inputIdVol.setText(dtm.getValueAt(selectedIndex, 1).toString());
-        inputPlaceVol.setText(dtm.getValueAt(selectedIndex, 2).toString());
-        inputIntituleVol.setText(dtm.getValueAt(selectedIndex, 3).toString());
-        inputAerDepartVol.setText(dtm.getValueAt(selectedIndex, 4).toString());
-        inputAerArriveeVol.setText(dtm.getValueAt(selectedIndex, 5).toString());
-        inputDateDepartVol.setText(dtm.getValueAt(selectedIndex, 6).toString());
-        inputDateArriveeVol.setText(dtm.getValueAt(selectedIndex, 7).toString());
-        inputIdCompagnieVol.setText(dtm.getValueAt(selectedIndex, 8).toString());
+        inputIdVol.setText(dtm.getValueAt(selectedIndex, 0).toString());
+        inputPlaceVol.setText(dtm.getValueAt(selectedIndex, 1).toString());
+        inputIntituleVol.setText(dtm.getValueAt(selectedIndex, 2).toString());
+        inputAerDepartVol.setText(dtm.getValueAt(selectedIndex, 3).toString());
+        inputAerArriveeVol.setText(dtm.getValueAt(selectedIndex, 4).toString());
+        inputDateDepartVol.setText(dtm.getValueAt(selectedIndex, 5).toString());
+        inputDateArriveeVol.setText(dtm.getValueAt(selectedIndex, 6).toString());
+        inputIdCompagnieVol.setText(dtm.getValueAt(selectedIndex, 7).toString());
     }//GEN-LAST:event_tableVolsMouseClicked
 
     /**

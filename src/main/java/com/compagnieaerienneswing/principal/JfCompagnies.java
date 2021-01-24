@@ -333,6 +333,7 @@ public class JfCompagnies extends javax.swing.JFrame {
         DefaultTableModel dtm = (DefaultTableModel)tableCompagnie.getModel();
         int selectedIndex = tableCompagnie.getSelectedRow();
         
+        inputIdCompagnies.setText(dtm.getValueAt(selectedIndex, 0).toString());
         inputNameCompagnies.setText(dtm.getValueAt(selectedIndex, 1).toString());
     }//GEN-LAST:event_tableCompagnieMouseClicked
 
