@@ -327,9 +327,7 @@ public class PagePrincipale extends javax.swing.JFrame {
 
     private void btnReservationsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReservationsMouseClicked
         // TODO add your handling code here:
-        dispose();
-        JfReservations r = new JfReservations();
-        r.setVisible(true);
+        
     }//GEN-LAST:event_btnReservationsMouseClicked
 
     private void btnEscalesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEscalesMouseClicked
